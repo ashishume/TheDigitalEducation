@@ -1,22 +1,28 @@
 import React, {Component, Fragment} from 'react';
 import SplashScreen from 'react-native-splash-screen';
 import http from './API/HttpService';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Text} from 'react-native';
 import {loading} from './Store/Actions/loader';
 import {connect} from 'react-redux';
 
 import BannerAd from './components/Ads/BannerAds';
-import {AdMobInterstitial} from 'react-native-admob';
-import env from './environment/env';
 import 'react-native-gesture-handler';
 import MainRouting from './Routes/MainRouting';
 import Loader from './components/UI/Loader';
+// import Notification from './components/Notifications';
+
+// import messaging from '@react-native-firebase/messaging';
 
 class App extends Component {
   componentDidMount() {
-    SplashScreen.hide();
-    const self = this;
+    // async function registerAppWithFCM() {
+    // messaging().registerDeviceForRemoteMessages();
+    // }
 
+    // <Notification />;
+    SplashScreen.hide();
+
+    const self = this;
     http.interceptors.request.use(
       request => {
         self.props.loading(true);
@@ -42,12 +48,6 @@ class App extends Component {
   }
 
   render() {
-    setTimeout(function() {
-      AdMobInterstitial.setAdUnitID(env.InterId);
-      AdMobInterstitial.setTestDevices([AdMobInterstitial.simulatorId]);
-      AdMobInterstitial.requestAd().then(() => AdMobInterstitial.showAd());
-    }, 5000);
-
     return (
       <Fragment>
         {this.props.loader ? <Loader /> : null}

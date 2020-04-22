@@ -1,18 +1,15 @@
 import React, {Component} from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import MainPage from '../components/MainPage';
+import PrivacyPolicy from '../components/UI/PrivacyPolicy';
 
 class DrawerNavigation extends Component {
   render() {
-    console.log(this.props);
     const Drawer = createDrawerNavigator();
     return (
       <Drawer.Navigator initialRouteName="Dashboard">
-        <Drawer.Screen
-          navigationOptions={{drawerLabel: 'Settings'}}
-          name="Dashboard"
-          component={MainPage}
-        />
+        <Drawer.Screen name="Dashboard" component={MainPage} />
+        <Drawer.Screen name="Privacy Policy" component={PrivacyPolicy} />
       </Drawer.Navigator>
     );
   }

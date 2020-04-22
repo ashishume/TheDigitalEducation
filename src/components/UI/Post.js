@@ -1,20 +1,10 @@
 import React from 'react';
 import 'react-native-get-random-values';
-import {Card, Icon, Badge, WingBlank, Button} from '@ant-design/react-native';
-import {
-  View,
-  Image,
-  Text,
-  Share,
-  ImageBackground,
-  StyleSheet,
-  Dimensions,
-} from 'react-native';
-import {TouchableHighlight} from 'react-native-gesture-handler';
+import {Button} from '@ant-design/react-native';
+import {View, Text, StyleSheet, Dimensions} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Style from '../Styles';
 import SharePost from './SharePost';
-// import SharePost from '../UI/SharePost';
 
 const Post = props => {
   return (
@@ -30,6 +20,7 @@ const Post = props => {
             <View style={styles.headContainer}>
               <Text style={styles.heading}>{props.data.title}</Text>
             </View>
+
             <View style={styles.cardBody}>
               <Text style={styles.author}>
                 Posted by: {props.data.author.displayName}

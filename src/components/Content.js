@@ -5,6 +5,9 @@ import {fetchContent} from '../Store/Actions/Index';
 import {WebView} from 'react-native-webview';
 import Style from '../components/Styles';
 import SharePost from './UI/SharePost';
+// import {AdMobInterstitial} from 'react-native-admob';
+// import env from '../environment/env';
+
 class Content extends Component {
   renderShare = url => {
     Share.share(
@@ -20,6 +23,11 @@ class Content extends Component {
   };
 
   componentDidMount() {
+    // setTimeout(function() {
+    //   AdMobInterstitial.setAdUnitID(env.InterId);
+    //   AdMobInterstitial.setTestDevices([AdMobInterstitial.simulatorId]);
+    //   AdMobInterstitial.requestAd().then(() => AdMobInterstitial.showAd());
+    // }, 5000);
     this.props.fetchContent(this.props.route.params.postId);
   }
 
@@ -28,8 +36,12 @@ class Content extends Component {
     return (
       <Fragment>
         <View style={styles.container}>
-          <Text style={styles.heading}>{data.title}</Text>
-          <SharePost url={data.url} style={'#000'} />
+          <View style={styles.headingContainer}>
+            <Text style={styles.heading}>{data.title}</Text>
+          </View>
+          <View style={styles.sharePost}>
+            <SharePost url={data.url} style={'#000'} />
+          </View>
         </View>
         <WebView
           source={{html: data.content}}
@@ -45,10 +57,17 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
     padding: 10,
+    flexDirection: 'row',
   },
   heading: {
-    fontSize: 25,
+    fontSize: 20,
     ...Style.fontFamily,
+  },
+  headingContainer: {
+    flex: 5,
+  },
+  sharePost: {
+    flex: 1,
   },
   webView: {
     height: 10,

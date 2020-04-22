@@ -1,10 +1,9 @@
-package com.thedigitaleducation;
+package com.thedigitallive;
 
 import com.facebook.react.ReactActivity;
 
 import org.devio.rn.splashscreen.SplashScreen; // Import this.
 import android.os.Bundle; // Import this.
-
 
 public class MainActivity extends ReactActivity {
 
@@ -13,8 +12,9 @@ public class MainActivity extends ReactActivity {
     SplashScreen.show(this);
     super.onCreate(savedInstanceState);
   }
+
   @Override
   protected String getMainComponentName() {
-    return "TheDigitalEducation";
+    return "TheDigitalLive";
   }
 }

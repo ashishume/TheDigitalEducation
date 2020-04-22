@@ -11,6 +11,7 @@ class MainPage extends Component {
         <View style={styles.menuContainer}>
           <View style={styles.leftItem}>
             <TouchableOpacity
+              style={styles.menuButton}
               onPress={() => {
                 this.props.navigation.toggleDrawer();
               }}>
@@ -36,6 +37,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
     height: '100%',
+    paddingBottom: 50,
   },
   menuContainer: {
     flexDirection: 'row',

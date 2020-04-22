@@ -44,8 +44,8 @@ def flipper_post_install(installer)
   end
 end
 
-target 'TheDigitalEducation' do
-  # Pods for TheDigitalEducation
+target 'TheDigitalLive' do
+  # Pods for TheDigitalLive
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -77,7 +77,7 @@ target 'TheDigitalEducation' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'TheDigitalEducationTests' do
+  target 'TheDigitalLiveTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -94,10 +94,10 @@ target 'TheDigitalEducation' do
   end
 end
 
-target 'TheDigitalEducation-tvOS' do
-  # Pods for TheDigitalEducation-tvOS
+target 'TheDigitalLive-tvOS' do
+  # Pods for TheDigitalLive-tvOS
 
-  target 'TheDigitalEducation-tvOSTests' do
+  target 'TheDigitalLive-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

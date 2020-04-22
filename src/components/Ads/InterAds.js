@@ -1,13 +1,13 @@
-// import React, { Fragment } from 'react';
-// import {View} from 'react-native';
+// import React, {Component, Fragment} from 'react';
 // import {AdMobInterstitial} from 'react-native-admob';
+// import env from '../../environment/env';
+// class InterAds extends Component {
+//   componentDidMount() {
 
-// const InterAds = () => <Fragment>
-//       // setTimeout(function() {
-//     //   AdMobInterstitial.setAdUnitID(env.InterId);
-//     //   AdMobInterstitial.setTestDevices([AdMobInterstitial.simulatorId]);
-//     //   AdMobInterstitial.requestAd().then(() => AdMobInterstitial.showAd());
-//     // }, 4000);
-// </Fragment>;
+//   }
+//   render() {
+//     return <View />;
+//   }
+// }
 
 // export default InterAds;

@@ -1,13 +1,12 @@
 import React from 'react';
 import {Image} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, useLinking} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import PostsList from '../components/PostsList';
 import Content from '../components/Content';
 import Style from '../components/Styles';
 import DrawerNavigation from './DrawerNavigation';
-import {TouchableHighlight} from 'react-native-gesture-handler';
-import {Icon} from '@ant-design/react-native';
+import PrivacyPolicy from '../components/UI/PrivacyPolicy';
 
 const Stack = createStackNavigator();
 const MainRouting = () => {
@@ -31,6 +30,7 @@ const MainRouting = () => {
           options={{...headerStyles}}
           component={Content}
         />
+        <Stack.Screen name="Privacy Policy" component={PrivacyPolicy} />
       </Stack.Navigator>
     </NavigationContainer>
   );

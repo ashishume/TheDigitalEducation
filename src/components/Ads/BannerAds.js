@@ -1,8 +1,8 @@
 import React, {Fragment} from 'react';
+import {View, StyleSheet} from 'react-native';
 import {PublisherBanner} from 'react-native-admob';
 import environment from '../../environment/env';
 const BannerAd = () => {
-  const appId = '';
   return (
     <Fragment>
       <PublisherBanner
@@ -15,5 +15,11 @@ const BannerAd = () => {
     </Fragment>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    // marginTop: 5,
+  },
+});
 
 export default BannerAd;
