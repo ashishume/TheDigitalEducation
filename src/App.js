@@ -1,71 +1,32 @@
 import React, {Component, Fragment} from 'react';
-import SplashScreen from 'react-native-splash-screen';
-import http from './API/HttpService';
-import {StyleSheet, Text} from 'react-native';
-import {loading} from './Store/Actions/loader';
-import {connect} from 'react-redux';
-
 import BannerAd from './components/Ads/BannerAds';
-import 'react-native-gesture-handler';
 import MainRouting from './Routes/MainRouting';
-import Loader from './components/UI/Loader';
-// import Notification from './components/Notifications';
-
+import LoaderComponent from './components/LoaderComponent';
 // import messaging from '@react-native-firebase/messaging';
 
 class App extends Component {
-  componentDidMount() {
-    // async function registerAppWithFCM() {
-    // messaging().registerDeviceForRemoteMessages();
-    // }
+  // componentDidMount() {
+  //   this.checkPermission();
+  // }
 
-    // <Notification />;
-    SplashScreen.hide();
-
-    const self = this;
-    http.interceptors.request.use(
-      request => {
-        self.props.loading(true);
-        return request;
-      },
-      error => {
-        self.props.loading(false);
-
-        return Promise.reject(error);
-      },
-    );
-
-    http.interceptors.response.use(
-      response => {
-        self.props.loading(false);
-        return response;
-      },
-      error => {
-        self.props.loading(false);
-        return Promise.reject(error);
-      },
-    );
-  }
+  // async checkPermission() {
+  //   const settings = await messaging().requestPermission();
+  //   if (settings) {
+  //     console.log('Permission settings:', settings);
+  //   }
+  // }
 
   render() {
     return (
       <Fragment>
-        {this.props.loader ? <Loader /> : null}
+        <LoaderComponent />
         <MainRouting />
-        <BannerAd />
+        {/* <BannerAd /> */}
       </Fragment>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    loader: state.loader,
-  };
-};
-export default connect(
-  mapStateToProps,
-  {loading},
-)(App);
+export default App;
 
-// ./gradlew assembleRelease
+// ./gradlew bundleRelease
